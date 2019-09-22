@@ -5,6 +5,7 @@ Version: 0.1.0
 Author: Jason Kelley
 Maintainer: Jason Kelley <jkelley@uvic.ca>
 Description: This package makes a series of plots of fire emissions data
+    URL: https://github.com/jwkelley/FireEmissionsPlots
 Imports: ggplot2, grid, gridExtra, Rmisc, ggpubr, cowplot
 License: GPL-2
 Encoding: UTF-8
