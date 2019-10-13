@@ -2,11 +2,12 @@
 #'
 #' This function reads in a datafram of fire and emissions data from DOI and USFS and creates histograms by state.
 #' @param fires Dataframe containing DOI and USFS fire and emissions data.
+#' @param agency Column number for the agency column in the fires dataframe
 #' @keywords Fire Emissions Histogram
 #' @export
 #' @examples fire_hist(fires = x)
 #' @import ggplot2
-#' @import grid
+## @import grid
 #' @import gridExtra
 #' @import Rmisc
 #' @import ggpubr
@@ -14,18 +15,21 @@
 
 
 
-fire_hist <- function(fires){
+fire_hist <- function(fires, agency){
 
   require(ggplot2)
-  require(grid)
+  # require(grid)
   require(gridExtra)
   require(Rmisc)
   require(ggpubr)
   require(cowplot)
 
 
-  colnames(fires)[7] <- "Agency"
+  colnames(fires)[agency] <- "Agency"
 
+  #####
+  ##Should the following variables be passed to the function and be dynamic?
+  ##Some are used for subsetting (var.name, state.abbr) and others are used for labels (state.name, x.labs)
   var.name <- c("PM2.5","PM10","Lead","CO","NO2","O3","SO2","wind", "tavg", "tmax", "tmin", "precip","PDSI")
   state.abbr <- c("AZ","CA","CO","ID","MT","NV","NM","OR","UT","WA","WY")
   state.name <- c("Arizona", "California","Colorado","Idaho","Montana","Nevada","New Mexico","Oregon","Utah","Washington","Wyoming")
@@ -43,16 +47,17 @@ fire_hist <- function(fires){
               "Precipitation (mm)",
               "Palmer Drought Severity Index")
 
-  var.full.name <- c("PM2.5 Measurements","PM10 Measurements","Lead Measurements","CO Measurements","NO2 Measurements",
-                     "O3 Measurements","SO2 Measurements","Daily Average Wind Speed",
-                     "Daily Average Temperature", "Daily Maximum Temperature", "Daily Minimum Temperature",
-                     "Daily Precipitation","Palmer Drought Severity Index")
+  # var.full.name <- c("PM2.5 Measurements","PM10 Measurements","Lead Measurements","CO Measurements","NO2 Measurements",
+  #                    "O3 Measurements","SO2 Measurements","Daily Average Wind Speed",
+  #                    "Daily Average Temperature", "Daily Maximum Temperature", "Daily Minimum Temperature",
+  #                    "Daily Precipitation","Palmer Drought Severity Index")
+  #
 
 
-  for(j in 1:13){
-
+  for(j in 1:length(var.name)){
     plots <- list()
-    for(i in 1:11){ # state
+
+    for(i in 1:length(state.abbr)){
       state <- subset(fires, State==state.abbr[i])
       #make multi-plot
       a <- ggplot2::ggplot(state, aes(get(var.name[j]), fill=Agency)) +
