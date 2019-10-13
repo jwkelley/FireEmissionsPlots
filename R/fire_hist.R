@@ -7,6 +7,7 @@
 #' @export
 #' @examples fire_hist(fires = x, agency = 7)
 #' @import ggplot2
+#' @import grid
 #' @import gridExtra
 #' @import Rmisc
 #' @import ggpubr
@@ -17,7 +18,7 @@
 fire_hist <- function(fires, agency){
 
   require(ggplot2)
-  # require(grid)
+  require(grid)
   require(gridExtra)
   require(Rmisc)
   require(ggpubr)
