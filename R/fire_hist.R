@@ -47,12 +47,6 @@ fire_hist <- function(fires, agency){
               "Precipitation (mm)",
               "Palmer Drought Severity Index")
 
-  # var.full.name <- c("PM2.5 Measurements","PM10 Measurements","Lead Measurements","CO Measurements","NO2 Measurements",
-  #                    "O3 Measurements","SO2 Measurements","Daily Average Wind Speed",
-  #                    "Daily Average Temperature", "Daily Maximum Temperature", "Daily Minimum Temperature",
-  #                    "Daily Precipitation","Palmer Drought Severity Index")
-  #
-
 
   for(j in 1:length(var.name)){
     plots <- list()
@@ -84,6 +78,8 @@ fire_hist <- function(fires, agency){
     }
     legend <- extractLegend(b)
 
+    #####
+    #THIS MIGHT NEED TO BE DYNAMIC IF MORE STATES
     plots[[12]] <- cowplot::ggdraw(legend)
     lay <- rbind(c(1,1,2,2,3,3,4,4),
                  c(5,5,6,6,7,7,8,8),
