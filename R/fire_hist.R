@@ -1,6 +1,6 @@
 #' Fire Emission Histograms
 #'
-#' This function reads in a datafram of fire and emissions data from DOI and USFS and creates histograms by state.
+#' This function reads in a dataframe of fire and emissions data from DOI and USFS and creates histograms by state.
 #' @param fires Dataframe containing DOI and USFS fire and emissions data.
 #' @param agency Column number for the agency column in the fires dataframe
 #' @keywords Fire Emissions Histogram

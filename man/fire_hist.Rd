@@ -12,7 +12,7 @@ fire_hist(fires, agency)
 \item{agency}{Column number for the agency column in the fires dataframe}
 }
 \description{
-This function reads in a datafram of fire and emissions data from DOI and USFS and creates histograms by state.
+This function reads in a dataframe of fire and emissions data from DOI and USFS and creates histograms by state.
 }
 \examples{
 fire_hist(fires = x, agency = 7)
