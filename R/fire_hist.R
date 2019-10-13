@@ -14,10 +14,6 @@
 
 
 
-
-
-
-
 fire_hist <- function(fires){
 
   require(ggplot2)
@@ -26,6 +22,8 @@ fire_hist <- function(fires){
   require(Rmisc)
   require(ggpubr)
   require(cowplot)
+
+
   colnames(fires)[7] <- "Agency"
 
   var.name <- c("PM2.5","PM10","Lead","CO","NO2","O3","SO2","wind", "tavg", "tmax", "tmin", "precip","PDSI")
