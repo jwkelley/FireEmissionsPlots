@@ -12,7 +12,7 @@ fire_box(Fires, i)
 \item{i}{value of 1 "DOI" or 2 "USFS" for data source}
 }
 \description{
-This function reads in a datafram of fire and emissions data from DOI and USFS and creates box plots by state.
+This function reads in a dataframe of fire and emissions data from DOI and USFS and creates box plots by state.
 }
 \examples{
 fire_box(Fires = x, i = 1)
