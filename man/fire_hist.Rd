@@ -4,16 +4,18 @@
 \alias{fire_hist}
 \title{Fire Emission Histograms}
 \usage{
-fire_hist(fires)
+fire_hist(fires, agency)
 }
 \arguments{
 \item{fires}{Dataframe containing DOI and USFS fire and emissions data.}
+
+\item{agency}{Column number for the agency column in the fires dataframe}
 }
 \description{
 This function reads in a datafram of fire and emissions data from DOI and USFS and creates histograms by state.
 }
 \examples{
-fire_hist(fires = x)
+fire_hist(fires = x, agency = 7)
 }
 \keyword{Emissions}
 \keyword{Fire}

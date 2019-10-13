@@ -5,7 +5,7 @@
 #' @param agency Column number for the agency column in the fires dataframe
 #' @keywords Fire Emissions Histogram
 #' @export
-#' @examples fire_hist(fires = x)
+#' @examples fire_hist(fires = x, agency = 7)
 #' @import ggplot2
 ## @import grid
 #' @import gridExtra
